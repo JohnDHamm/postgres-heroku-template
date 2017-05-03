@@ -32,10 +32,23 @@ angular
 			};
 			$http
 				.post('/api/addItem', newItem)
-				.then((data) =>{
-					loadPage();
-				})
+				.then((data) =>
+					loadPage()
+				)
+				.catch(console.error)
+		}
+
+		$scope.delItem = (id) => {
+			$http
+				.delete(`/api/delItem/${id}`)
+				.then((data) =>
+					loadPage()
+				)
 				.catch(console.error)
 		}
 
 	})
+
+
+
+
