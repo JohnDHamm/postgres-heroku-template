@@ -32,10 +32,45 @@ angular
 			};
 			$http
 				.post('/api/addItem', newItem)
-				.then((data) =>{
-					loadPage();
+				.then((data) =>
+					loadPage()
+				)
+				.catch(console.error)
+		}
+
+		$scope.delItem = (id) => {
+			$http
+				.delete(`/api/delItem/${id}`)
+				.then((data) =>
+					loadPage()
+				)
+				.catch(console.error)
+		}
+
+		$scope.editItem = (id, column) => {
+			let updateItemObj;
+			let date = Date.now().toFixed();
+			let dateNew = new Date(parseInt(date)).toString();
+			if (column == 1) {
+				updateItemObj = {
+					ColumnOne: 'updated: ' + dateNew
+				}
+			} else {
+				updateItemObj = {
+					ColumnTwo: 'updated: ' + dateNew
+				}
+			}
+			$http
+				.put(`/api/editItem/${id}`, updateItemObj)
+				.then((data) => {
+					console.log("data", data);
+					loadPage()
 				})
 				.catch(console.error)
 		}
 
 	})
+
+
+
+

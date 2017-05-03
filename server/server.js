@@ -33,6 +33,23 @@ app.post('/api/addItem', (req, res) => {
 		})
 })
 
+app.delete('/api/delItem/:id', (req, res) => {
+	knex('TableOne')
+		.where('id', req.params.id)
+		.del(req.body)
+		.then((data) => {
+			res.json(data)
+		})
+})
+
+app.put('/api/editItem/:id', (req, res) => {
+	knex('TableOne')
+		.where('id', req.params.id)
+		.update(req.body)
+		.then((data) => {
+			res.json(data)
+		})
+})
 
 
 

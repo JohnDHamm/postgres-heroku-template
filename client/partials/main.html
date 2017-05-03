@@ -1,8 +1,10 @@
 <div>
 	<div class="itemDiv" ng-repeat="item in items">
 		<h3>id: {{item.id}}</h3>
-		<h4>ColumnOne: {{item.ColumnOne}}</h4>
-		<h4>ColumnTwo: {{item.ColumnTwo}}</h4>
+		<p>ColumnOne: <span class="rowValue" ng-click="editItem(item.id, 1)">{{item.ColumnOne}}</span></p>
+		<p>ColumnTwo: <span class="rowValue" ng-click="editItem(item.id, 2)">{{item.ColumnTwo}}</span></p>
+		<div class="delBtn" ng-click="delItem(item.id)">Delete
+		</div>
 	</div>
 
 	<div id="addBtn" ng-click="addItem()">Add Item

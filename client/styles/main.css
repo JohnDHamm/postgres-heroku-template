@@ -1,5 +1,9 @@
-h1 {
+body {
 	font-family: sans-serif;
+
+}
+
+h1 {
 	color: #888;
 }
 
@@ -12,6 +16,17 @@ h1 {
 	color: #ddd;
 	border-radius: 5px;
 	margin: auto;
+	width: 20%;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.delBtn {
+	background-color: #ddd;
+	color: #555;
+	border-radius: 5px;
+	margin: 0 10px;
 	width: 20%;
 	text-align: center;
 	padding: 5px;
