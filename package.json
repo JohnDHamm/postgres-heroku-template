@@ -19,6 +19,8 @@
   "homepage": "https://github.com/JohnDHamm/postgres-heroku-template#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "knex": "^0.13.0",
+    "pg": "^6.1.5"
   }
 }
