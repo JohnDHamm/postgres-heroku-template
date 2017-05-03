@@ -2,3 +2,18 @@ h1 {
 	font-family: sans-serif;
 	color: #888;
 }
+
+.itemDiv {
+	border-bottom: 1px solid #bbb;
+}
+
+#addBtn {
+	background-color: #222;
+	color: #ddd;
+	border-radius: 5px;
+	margin: auto;
+	width: 20%;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+}

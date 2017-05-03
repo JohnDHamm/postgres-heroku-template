@@ -14,17 +14,26 @@ app.set('port', port);
 app.use(express.static('client'));
 app.use(bodyParser.json());
 
-// APIs
 
+// APIs
 app.get('/api/getTableOneItems', (req, res) => {
 	knex('TableOne')
 		.select('*')
-		.orderBy('ColumnOne')
+		.orderBy('id')
 		.then((data) => {
-			console.log("getTableOneItems", data);
 			res.json(data)
 		})
 })
+
+app.post('/api/addItem', (req, res) => {
+	knex('TableOne')
+		.insert(req.body)
+		.then((data) => {
+			res.json(data)
+		})
+})
+
+
 
 
 app.listen(port, () => {
