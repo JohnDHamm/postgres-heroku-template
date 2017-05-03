@@ -42,6 +42,15 @@ app.delete('/api/delItem/:id', (req, res) => {
 		})
 })
 
+app.put('/api/editItem/:id', (req, res) => {
+	knex('TableOne')
+		.where('id', req.params.id)
+		.update(req.body)
+		.then((data) => {
+			res.json(data)
+		})
+})
+
 
 
 app.listen(port, () => {
