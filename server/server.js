@@ -1,12 +1,10 @@
 'use strict';
 
 const express = require('express');
-const config = require('../knexfile').production;
+const config = require('../db/knexfile').production;
 const knex = require('knex')(config)
 
 const bodyParser = require('body-parser');
-
-// const { connect } = require('../db/database');
 
 const port = process.env.PORT || 3000;
 const app = express();
