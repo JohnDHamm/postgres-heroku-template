@@ -1,10 +1,12 @@
 'use strict';
 
 const express = require('express');
-const config = require('../knexfile').development
+const config = require('../knexfile').production;
 const knex = require('knex')(config)
 
 const bodyParser = require('body-parser');
+
+// const { connect } = require('../db/database');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -52,7 +54,7 @@ app.put('/api/editItem/:id', (req, res) => {
 })
 
 
-
 app.listen(port, () => {
-	console.log(`Listening on port ${port}`)
+	console.log(`Listening on port: ${port}`);
 });
+
