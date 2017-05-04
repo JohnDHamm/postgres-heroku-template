@@ -43,10 +43,10 @@ module.exports = {
     // connection: process.env.DATABASE_URL,
     // ssl: true,
     seeds: {
-      directory: './db/seeds'
+      directory: './seeds'
     },
     migrations: {
-      directory: './db/migrations'
+      directory: './migrations'
     },
     pool: {
       min: 2,
