@@ -34,18 +34,21 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: 'postgres=//ypvpexvhcdgnfi:1c517e12de8d03b2b4b1914ad602190cd430e69bf306c779bc03afbeec1b060c@ec2-54-83-205-71.compute-1.amazonaws.com:5432/de9og40npaifi0?ssl=true',
     // connection: {
     //   database: 'my_db',
     //   user:     'username',
     //   password: 'password'
     // },
+    seeds: {
+      directory: './db/seeds'
+    },
+    migrations: {
+      directory: './db/migrations'
+    },
     pool: {
       min: 2,
       max: 10
-    },
-    migrations: {
-      // tableName: 'knex_migrations'
     }
   }
 
