@@ -63,7 +63,6 @@ angular
 			$http
 				.put(`/api/editItem/${id}`, updateItemObj)
 				.then((data) => {
-					console.log("data", data);
 					loadPage()
 				})
 				.catch(console.error)
