@@ -8,9 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "heroku-prebuild": "npm install -g knex",
-    "heroku-postbuild": "knex migrate:latest --knexfile db/knexfile.js && knex seed:run --knexfile.js db/knexfile.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
