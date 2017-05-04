@@ -34,12 +34,14 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: 'postgres=//ypvpexvhcdgnfi:1c517e12de8d03b2b4b1914ad602190cd430e69bf306c779bc03afbeec1b060c@ec2-54-83-205-71.compute-1.amazonaws.com:5432/de9og40npaifi0?ssl=true',
+    connection: 'postgres=//ypvpexvhcdgnfi:1c517e12de8d03b2b4b1914ad602190cd430e69bf306c779bc03afbeec1b060c@ec2-54-83-205-71.compute-1.amazonaws.com:5432/de9og40npaifi0',
     // connection: {
     //   database: 'my_db',
     //   user:     'username',
     //   password: 'password'
     // },
+    // connection: process.env.DATABASE_URL,
+    ssl: true,
     seeds: {
       directory: './db/seeds'
     },
