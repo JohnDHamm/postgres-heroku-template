@@ -1,10 +1,12 @@
 'use strict';
 
 const express = require('express');
-const config = require('../knexfile').development
+const config = require('../knexfile').production;
 const knex = require('knex')(config)
 
 const bodyParser = require('body-parser');
+
+// const { connect } = require('../db/database');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -51,8 +53,23 @@ app.put('/api/editItem/:id', (req, res) => {
 		})
 })
 
+var pg = require('pg');
+pg.defaults.ssl = true;
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
 
-
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`)
+  client
+    .query('SELECT table_schema,table_name FROM information_schema.tables;')
+    .on('row', function(row) {
+      console.log(JSON.stringify(row));
+    });
 });
+
+// connect()
+// 	.then(() => {
+		app.listen(port, () => {
+			console.log(`Listening on port: ${port}`);
+		});
+	// })
+	// .catch(console.error)
