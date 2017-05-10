@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular
 	.module('TemplateApp', ['ngRoute'])
 	.config($routeProvider =>
